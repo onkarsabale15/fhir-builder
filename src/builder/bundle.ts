@@ -9,7 +9,7 @@ export default class Bundle {
     this.bundle = {
       resourceType: "Bundle",
       type,
-      entry: []
+      entry: [] // Always initialize entry array
     };
   }
 
@@ -20,10 +20,8 @@ export default class Bundle {
         `Invalid resourceType: ${cleanResource.resourceType}. Must be one of: ${Array.from(ALLOWED_RESOURCES).join(", ")}`
       );
     }
-    if (!this.bundle.entry) {
-      this.bundle.entry = [];
-    }
-    this.bundle.entry.push({ resource: cleanResource });
+    // Non-null assertion is safe because we always initialize entry in constructor
+    this.bundle.entry!.push({ resource: cleanResource });
   }
 
   getBundle(): FHIRBundle {
