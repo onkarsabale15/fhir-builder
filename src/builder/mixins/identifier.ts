@@ -1,6 +1,8 @@
 import { Identifier, Resource } from '../../types/fhir-types';
 import BaseResource from '../baseResource';
 
+// Note: Using any[] for mixin constructor is a TypeScript limitation
+// See: https://www.typescriptlang.org/docs/handbook/mixins.html
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Constructor<T = {}> = new (...args: any[]) => T;
 
