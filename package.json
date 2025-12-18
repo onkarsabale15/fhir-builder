@@ -1,0 +1,40 @@
+{
+  "name": "fhir-serializer",
+  "version": "1.0.0",
+  "description": "A TypeScript library for building valid FHIR R4 resources",
+  "main": "./dist/builder/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js",
+      "require": "./dist/types/index.js"
+    },
+    "./builder": {
+      "types": "./dist/builder/index.d.ts",
+      "import": "./dist/builder/index.js",
+      "require": "./dist/builder/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "fhir",
+    "fhir-r4",
+    "healthcare",
+    "hl7",
+    "typescript",
+    "builder"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
